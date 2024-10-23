@@ -30,7 +30,7 @@ document.getElementById("reveal-button").addEventListener("click", function() {
         currentMessage++;
     } else {
         this.innerHTML = "Carta completa! 🎉";
-        this.disabled = true;
+        // this.disabled = true;
 
         // Mudar para a última imagem junto com os confetes
         document.body.style.backgroundImage = `url(${backgroundImages[backgroundImages.length - 1]})`;
