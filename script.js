@@ -30,7 +30,6 @@ document.getElementById("reveal-button").addEventListener("click", function() {
         currentMessage++;
     } else {
         this.innerHTML = "Carta completa! 🎉";
-        // this.disabled = true;
 
         // Mudar para a última imagem junto com os confetes
         document.body.style.backgroundImage = `url(${backgroundImages[backgroundImages.length - 1]})`;
@@ -46,5 +45,16 @@ document.getElementById("reveal-button").addEventListener("click", function() {
             origin: { y: 0.6 }
         });
     }
-});
 
+    // Confetes disparam toda vez que o botão é clicado após a carta estar completa
+    if (currentMessage > backgroundImages.length) {
+        let confettiSound = document.getElementById("confetti-audio");
+        confettiSound.play();
+
+        confetti({
+            particleCount: 150,
+            spread: 70,
+            origin: { y: 0.6 }
+        });
+    }
+});
